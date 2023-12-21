@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+	<key>scope</key>
+	<string>source.gdscript</string>
+	<key>settings</key>
+	<dict>
+		<key>foldScopes</key>
+		<array>
+			<dict>
+				<key>begin</key>
+				<string>keyword.control.region.begin</string>
+				<key>end</key>
+				<string>keyword.control.region.end</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist> 

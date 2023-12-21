@@ -23,7 +23,6 @@ var x = """  " lone quote does not end the string
 var x = """ \""" """
 #           ^^ constant.character.escape.gdscript
 
-
 " # not a comment"
 #^^^^^^^^^^^^^^^^^ meta.string.gdscript string.quoted.double.gdscript
 # <- punctuation.definition.string.begin.gdscript
@@ -234,6 +233,13 @@ signal mysignal
 
 @warning_ignore("integer_division")
 
-$Object1234\node2
+$Object1234/node2
 
 %Object1234
+
+func state(username:String = "parameter", ) -> void:
+    pass
+
+var area: Area2D
+
+area.set_density
