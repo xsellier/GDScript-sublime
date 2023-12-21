@@ -26,6 +26,19 @@ contexts:
     - include: expressions
     - include: assignments
 
+    - match: \bself\b
+      scope: keyword.self.gdscript
+    - match: \bawait\b
+      scope: keyword.self.gdscript
+    - match: \bvar\b
+      scope: keyword.var.gdscript
+    - match: '\$\b[a-zA-Z0-9\\]+\b'
+      scope: comment.node.dollar-node
+    - match: '%\b\w+\b'
+      scope: comment.node.percentage-node
+    - match: '@\b\w+\b'
+      scope: keyword.at-sign
+      
   docstrings:
     - match: ^\s*(""")
       captures:
@@ -67,7 +80,7 @@ contexts:
       scope: keyword.operator.logical.gdscript
     - match: <=|>=|==|<|>|!=
       scope: keyword.operator.comparison.gdscript
-    - match: \+=|-=|\*=|/=|%=|&=|\|=|\*|/|%|\+|-|<<|>>|&|\||\^|~
+    - match: \+=|-=|\*=|/=|%=|&=|\|=|\*|/|% |\+|-|<<|>>|&|\||\^|~
       scope: keyword.operator.arithmetic.gdscript
     - include: yields
     - include: function-calls
@@ -101,7 +114,7 @@ contexts:
       scope: keyword.other.gdscript
     - match: '(?<=extends)\s+{{identifier}}(\.({{identifier}}))?'
       scope: entity.other.inherited-class.gdscript
-    - match: \b(?i:true|false|null)\b
+    - match: '\b(true|false|null)\b'
       scope: constant.language.gdscript
     - match: \b(?i:export|tool)\b
       scope: storage.modifier.static.gdscript
@@ -283,6 +296,7 @@ contexts:
   yields:
     - match: \byield\b
       scope: keyword.control.flow.yield.gdscript
+      fg: black
       push:
         - match: (?=\()
           push:
@@ -297,6 +311,14 @@ contexts:
     - include: expressions
     - match: ','
       scope: punctuation.separator.arguments.gdscript
+    - match: \bself\b
+      scope: keyword.self
+    - match: \btrue|false|null\b
+      scope: constant.language.gdscript
+    - match: '\$\b[a-zA-Z0-9\\]+\b'
+      scope: comment.node.dollar-node
+    - match: '%\b\w+\b'
+      scope: comment.node.percentage-node
     - match: \)
       scope: punctuation.section.arguments.end.gdscript
       pop: true

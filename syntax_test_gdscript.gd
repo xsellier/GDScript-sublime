@@ -1,5 +1,7 @@
 # SYNTAX TEST "Packages/User/GDScript-sublime/GDScript.sublime-syntax"
 
+(self)
+
 """ # still a block comment """
 #   ^ comment.block.documentation.gdscript
 
@@ -91,7 +93,7 @@ func foo \  # nothing allowed after
 func foo() -> int:
 #          ^^ keyword.operator.arrow.forward.gdscript
 #             ^^^ storage.type.basic.gdscript
-    int(1)
+    int ()
 #   ^^^ storage.type.basic.gdscript
 func foo() -> Vector2:
 #          ^^ keyword.operator.arrow.forward.gdscript
@@ -222,3 +224,16 @@ enum TEST {
 #       ^^^^^                   entity.name.type.class.gdscript
 #             ^^^^^^            keyword.other.gdscript
 #                     ^^^^^^^^^ entity.other.inherited-class.gdscript
+
+yield
+await
+signal mysignal
+( false, %ciao, $Object\node34, self.me, true) true
+
+@onready var myname:String = "name" 
+
+@warning_ignore("integer_division")
+
+$Object1234\node2
+
+%Object1234
