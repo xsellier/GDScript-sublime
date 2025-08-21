@@ -7,7 +7,7 @@
     <string>gdshader</string>
   </array>
   <key>name</key>
-  <string>OpenGL SL</string>
+  <string>GDShader</string>
   <key>patterns</key>
   <array>
     <dict>
